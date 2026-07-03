@@ -9,6 +9,8 @@
         object-fit: cover;
         font-family: "Nunito", sans-serif !important;
         background-image: url("img/backgroun.jpg");
+        overflow: hidden;
+touch-action: none;
     }
 @media (max-width:992px) {
     .board{
