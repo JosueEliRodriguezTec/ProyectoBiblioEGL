@@ -141,9 +141,63 @@ function touchStart(e) {
 }
 
 function touchEnd(e) {
+  if (!touchStartBox) return;
 
-    // Aquí irá el código del swipe en el siguiente paso
+    let endX = e.changedTouches[0].clientX;
+    let endY = e.changedTouches[0].clientY;
 
+    let dx = endX - touchStartX;
+    let dy = endY - touchStartY;
+
+    // Si casi no se movió, no hacer nada.
+    if (Math.abs(dx) < 20 && Math.abs(dy) < 20) {
+        touchStartBox = null;
+        return;
+    }
+
+    let index = arr.indexOf(touchStartBox);
+    let target = null;
+
+    // Movimiento horizontal
+    if (Math.abs(dx) > Math.abs(dy)) {
+
+        if (dx > 0) {
+
+            // Derecha
+            if (index % width != width - 1)
+                target = arr[index + 1];
+
+        } else {
+
+            // Izquierda
+            if (index % width != 0)
+                target = arr[index - 1];
+
+        }
+
+    } else {
+
+        if (dy > 0) {
+
+            // Abajo
+            if (index + width < arr.length)
+                target = arr[index + width];
+
+        } else {
+
+            // Arriba
+            if (index - width >= 0)
+                target = arr[index - width];
+
+        }
+
+    }
+
+    if (target) {
+        swapBoxes(touchStartBox, target);
+    }
+
+    touchStartBox = null;
 }
 
 function dragStart(event) {
