@@ -117,11 +117,6 @@ function create1() {
 
         board.append(div);
 
-        div.addEventListener("dragstart", dragStart);
-
-        div.addEventListener("dragover", dragOver);
-
-        div.addEventListener("drop", drop);
 
        div.addEventListener("click", selectBox);
     }
