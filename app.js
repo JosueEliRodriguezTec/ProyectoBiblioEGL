@@ -158,29 +158,7 @@ function drop(event) {
    
 }
 
-function touchStart(event) {
 
-    element = event.target;
-
-}
-
-function touchEnd(event) {
-
-    let destino = event.target;
-
-    if (destino && destino.className === "box") {
-
-        let img = element.style.backgroundImage;
-
-        element.style.backgroundImage = destino.style.backgroundImage;
-
-        destino.style.backgroundImage = img;
-
-        check();
-
-    }
-
-}
 function check() {
 
     var flg = false;
