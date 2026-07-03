@@ -1,0 +1,210 @@
+
+    body {
+        height: 97vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: cover;
+        font-family: "Nunito", sans-serif !important;
+        background-image: url("img/backgroun.jpg");
+    }
+@media (max-width:992px) {
+    .board{
+        width: 100% !important;
+    }
+}
+    .board {
+        position: absolute;
+        justify-content: center;
+        padding: 15px 10px;
+        width: fit-content;
+        border-radius: 20px;
+        background-color: rgba(247, 224, 245, 0.532);
+        gap: 5px;
+        display: grid;
+        /* border: 2px solid red; */
+        grid-template-columns: repeat(8, 50px);
+        ;
+        grid-template-rows: repeat(8, 50px);
+        ;
+    }
+
+    .box {
+        /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+        /* border: 1px solid white; */
+        z-index: 1;
+        height: 60px;
+        width: 80px;
+        background-size: cover;
+        object-fit: cover;
+        cursor: crosshair;
+        width: 50px;
+    }
+
+    .flow {
+        z-index: 1;
+        animation: fn 0.5s ease forwards;
+    }
+
+    @keyframes fn {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0%);
+        }
+    }
+    .board1{
+        /* display: block !important; */
+        height: 80%;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: cover;
+        background-position: center;
+        background-image: url("img/Candy-Crush-Saga06132020-031548-15922_thumb_LE_auto_x2.jpg");
+        background-color: pink;
+        z-index: 3;
+
+    }
+    .str{
+        position: absolute;
+        bottom: 115px;
+        left: 23%;
+background-color: transparent;
+color: transparent;
+border: none;
+        padding: 20px 150px;
+    }
+   .h{
+       position:absolute;
+       left: 10px;
+       padding: 10px;
+       top: 6%;
+/* margin: 10px 0px; */
+       color: white;
+    }
+    .h0{
+       position:absolute;
+       right: 10px;
+       padding: 10px;
+       top: 6%;
+/* margin: 10px 0px; */
+       color: white;
+    }
+    .h0>h5{
+        text-transform: uppercase;
+        padding: 10px;
+        border-radius: 7px;
+    margin-top: -10px;
+        background-color: white;
+    color: rgb(255, 98, 124) !important; 
+    }
+    .h>h5{
+        text-transform: uppercase;
+        padding: 10px;
+        border-radius: 7px;
+    margin-top: -10px;
+        background-color: white;
+    color: rgb(255, 98, 124) !important; 
+
+}
+i{
+    font-size: 24px;
+}
+/*==========================
+   PANTALLA FINAL
+==========================*/
+
+.finalScreen{
+
+    display:none;
+
+    width:100%;
+    height:100%;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+.resultBox{
+
+    width:75%;
+    max-width:420px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.82);
+
+    text-align:center;
+
+    backdrop-filter: blur(5px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.resultBox h1{
+
+    color:#ff5b8c;
+
+    margin:10px 0;
+
+}
+
+.resultBox h2{
+
+    color:#ff5b8c;
+
+}
+
+.subtitulo{
+
+    color:#666;
+
+    font-size:22px;
+
+}
+
+#finalScore{
+
+    font-size:70px;
+
+    color:#ff5b8c;
+
+    margin:15px 0;
+
+}
+
+.gracias{
+
+    margin-top:20px;
+
+    color:#555;
+
+    font-size:20px;
+
+}
+@media (max-width: 768px) {
+
+    .board {
+
+        grid-template-columns: repeat(8, 38px);
+        grid-template-rows: repeat(8, 38px);
+
+    }
+
+    .box {
+
+        width: 38px;
+        height: 38px;
+
+    }
+
+}
