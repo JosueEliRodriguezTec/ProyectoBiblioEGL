@@ -122,6 +122,8 @@ function create1() {
         div.addEventListener("dragover", dragOver);
 
         div.addEventListener("drop", drop);
+
+       div.addEventListener("click", selectBox);
     }
 
     check();
