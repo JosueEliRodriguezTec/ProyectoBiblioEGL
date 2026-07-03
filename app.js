@@ -121,7 +121,6 @@ function create1() {
 
 
        div.addEventListener("click", selectBox);
-       div.addEventListener("click", selectBox);
 div.addEventListener("touchstart", touchStart);
 div.addEventListener("touchend", touchEnd);
     }
@@ -153,9 +152,7 @@ function dragStart(event) {
 
 }
 
-function dragStart(event) {
-    element = event.target;
-}
+
 
 function dragOver(event) {
     event.preventDefault();
@@ -263,6 +260,15 @@ function refill() {
 
 let firstBox = null;
 
+function swapBoxes(box1, box2) {
+
+    let temp = box1.style.backgroundImage;
+    box1.style.backgroundImage = box2.style.backgroundImage;
+    box2.style.backgroundImage = temp;
+
+    check();
+}
+
 function selectBox(e) {
 
     let box = e.target;
@@ -281,14 +287,10 @@ function selectBox(e) {
     }
 
     // intercambio
-    let temp = firstBox.style.backgroundImage;
-    firstBox.style.backgroundImage = box.style.backgroundImage;
-    box.style.backgroundImage = temp;
+   swapBoxes(firstBox, box);
 
-    firstBox.style.outline = "none";
-    firstBox = null;
-
-    check();
+firstBox.style.outline = "none";
+firstBox = null;
 }
      
     
