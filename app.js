@@ -3,7 +3,9 @@
 // document.getElementById("rel").addEventListener("click",()=>{
 //     location.reload()
 // })
-
+let touchStartBox = null;
+let touchStartX = 0;
+let touchStartY = 0;
 var a;
 
 var aud1 = document.getElementById("aud1");
@@ -119,9 +121,36 @@ function create1() {
 
 
        div.addEventListener("click", selectBox);
+       div.addEventListener("click", selectBox);
+div.addEventListener("touchstart", touchStart);
+div.addEventListener("touchend", touchEnd);
     }
 
+   
+
     check();
+}
+
+function touchStart(e) {
+
+    touchStartBox = e.target;
+
+    touchStartX = e.touches[0].clientX;
+
+    touchStartY = e.touches[0].clientY;
+
+}
+
+function touchEnd(e) {
+
+    // Aquí irá el código del swipe en el siguiente paso
+
+}
+
+function dragStart(event) {
+
+    element = event.target;
+
 }
 
 function dragStart(event) {
