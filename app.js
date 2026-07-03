@@ -123,9 +123,7 @@ function create1() {
 
         div.addEventListener("drop", drop);
 
-       div.addEventListener("touchstart", touchStart);
-
-div.addEventListener("touchend", touchEnd);
+      
     }
 
     check();
