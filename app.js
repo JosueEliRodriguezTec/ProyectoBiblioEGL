@@ -234,6 +234,36 @@ function refill() {
     setTimeout(check, 10);
 
 }
+
+let firstBox = null;
+
+function selectBox(e) {
+
+    let box = e.target;
+
+    if (!firstBox) {
+        firstBox = box;
+        box.style.outline = "3px solid white"; // solo visual
+        return;
+    }
+
+    // evitar seleccionar el mismo
+    if (firstBox === box) {
+        firstBox.style.outline = "none";
+        firstBox = null;
+        return;
+    }
+
+    // intercambio
+    let temp = firstBox.style.backgroundImage;
+    firstBox.style.backgroundImage = box.style.backgroundImage;
+    box.style.backgroundImage = temp;
+
+    firstBox.style.outline = "none";
+    firstBox = null;
+
+    check();
+}
      
     
 
