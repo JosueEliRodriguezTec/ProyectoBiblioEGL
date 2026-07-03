@@ -122,8 +122,6 @@ function create1() {
         div.addEventListener("dragover", dragOver);
 
         div.addEventListener("drop", drop);
-
-      
     }
 
     check();
@@ -153,9 +151,7 @@ function drop(event) {
 
         check();
     }
-   
 }
-
 
 function check() {
 
