@@ -7,6 +7,7 @@ let touchStartBox = null;
 let touchStartX = 0;
 let touchStartY = 0;
 var a;
+let gameStarted = false;
 
 var aud1 = document.getElementById("aud1");
 
@@ -28,13 +29,21 @@ function ply() {
     aud.play();
 
     document.getElementById("board1").style.display = "none";
-
+    gameStarted = true;
     a = setInterval(tim, 1500);
 }
 
 var scr;
 var time = 60;
 var rand;
+const imagenes = [
+    "Libro-rojo.png",
+    "Libro-verde.png",
+    "Visor.png",
+    "Silencio.png",
+    "Separador.png",
+    "Alimentos.png"
+];
 
 function tim() {
 
@@ -62,29 +71,7 @@ function tim() {
         document.getElementById("finalScore").innerHTML = scr;
 
         // Cambia el mensaje según la puntuación
-        let mensaje = "";
-
-        if (scr >= 500) {
-
-            document.getElementById("tituloFinal").innerHTML = "🏆 ¡Objetivo cumplido!";
-            mensaje = "¡Excelente trabajo!";
-
-        } else if (scr >= 350) {
-
-            document.getElementById("tituloFinal").innerHTML = "🥇 Muy buen trabajo";
-            mensaje = "Estuviste muy cerca.";
-
-        } else if (scr >= 200) {
-
-            document.getElementById("tituloFinal").innerHTML = "🥈 Buen intento";
-            mensaje = "Sigue practicando.";
-
-        } else {
-
-            document.getElementById("tituloFinal").innerHTML = "⏰ Tiempo agotado";
-            mensaje = "Inténtalo nuevamente.";
-
-        }
+        
 
         document.getElementById("mensajeFinal").innerHTML = mensaje;
 
@@ -111,9 +98,9 @@ function create1() {
 
         div.className = "box";
 
-        rand = Math.ceil(Math.random() * 6);
+       rand = Math.floor(Math.random() * imagenes.length);
 
-        div.style.backgroundImage = `url("img/color (${rand}).png")`;
+div.style.backgroundImage = `url("img/${imagenes[rand]}")`;
 
         arr.push(div);
 
@@ -250,9 +237,11 @@ function check() {
                 arr[i + 2].style.backgroundImage = "none";
 
                 flg = true;
+if (gameStarted) {
+    scr += 10;
+}
 
-                scr += 10;
-
+document.getElementById("score").innerHTML = scr;
                 document.getElementById("score").innerHTML = scr;
             }
         }
@@ -273,8 +262,11 @@ function check() {
 
             flg = true;
 
-            scr += 10;
+if (gameStarted) {
+    scr += 10;
+}
 
+document.getElementById("score").innerHTML = scr;
             document.getElementById("score").innerHTML = scr;
         }
     }
@@ -290,14 +282,13 @@ function refill() {
 
     for (let i = 0; i < width * width; i++) {
 
-        var rand = Math.ceil(Math.random() * 6);
+rand = Math.floor(Math.random() * imagenes.length);
 
         if (arr[i].style.backgroundImage === "none") {
 
             arr[i].classList.add("flow");
 
-            arr[i].style.backgroundImage = `url("img/color (${rand}).png")`;
-
+arr[i].style.backgroundImage = `url("img/${imagenes[rand]}")`;
             arr[i].addEventListener("animationend", () => {
 
                 arr[i].classList.remove("flow");
