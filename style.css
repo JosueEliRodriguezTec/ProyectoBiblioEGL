@@ -76,7 +76,7 @@ touch-action: none;
         position: absolute;
         bottom: 140px;
         left: 23%;
-background-color: rgba(255,0,0,.4);
+background:transparent;
 color: transparent;
 border: none;
         padding: 40px 150px;
