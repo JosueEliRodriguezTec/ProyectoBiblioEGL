@@ -5,7 +5,7 @@
         justify-content: center;
         align-items: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 110px;
         object-fit: cover;
         font-family: "Nunito", sans-serif !important;
         background-image: url("img/fondo.jpg");
