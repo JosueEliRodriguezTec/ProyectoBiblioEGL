@@ -197,15 +197,15 @@ i{
 
     .board {
 
-        grid-template-columns: repeat(8, 42px);
-        grid-template-rows: repeat(8, 42px);
+        grid-template-columns: repeat(8, 44px);
+        grid-template-rows: repeat(8, 44px);
 
     }
 
     .box {
 
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
 
     }
 
