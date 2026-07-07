@@ -39,7 +39,7 @@ touch-action: none;
         z-index: 1;
         height: 60px;
         width: 80px;
-        background-size: 120px;
+        background-size: cover;
         object-fit: cover;
         cursor: crosshair;
         width: 50px;
