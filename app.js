@@ -37,7 +37,7 @@ var scr;
 var time = 60;
 var rand;
 const imagenes = [
-    "Libro-rojo.png",
+    "Audifonos.png",
     "Libro-verde.png",
     "Visor.png",
     "Silencio.png",
